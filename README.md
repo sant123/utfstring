@@ -40,7 +40,7 @@ This library contains a number of UTF-safe string operations, including the ones
 UtfString is designed to be used in Deno.
 
 ```javascript
-import { UtfString } from 'https://raw.githubusercontent.com/sant123/utfstring/master/utfstring.ts';
+import { UtfString } from 'https://deno.land/x/utfstring/mod.ts';
 ```
 
 ## Usage
@@ -84,7 +84,7 @@ Certain characters in the Unicode standard are meant to be combined by display s
 Since regional indicators are semantically individual Unicode code points and because utfstring is a dependency of other Unicode-aware libraries, it doesn't make sense for utfstring to treat two regional indicators as a single character by default. That said, it can be useful to treat them as such from a display or layout perspective. In order to support both scenarios, two implementations are necessary. The first and default implementation is available via the instructions above. For visual grapheme clustering such as the grouping of regional indicators, use the `UtfStringVisual` module feature from `utfString`. Display-aware versions of all the functions described above are available. The difference can be seen by way of the `length` function:
 
 ```javascript
-import { UtfString, UtfStringVisual } from 'https://raw.githubusercontent.com/sant123/utfstring/master/utfstring.ts';
+import { UtfString, UtfStringVisual } from 'https://deno.land/x/utfstring/mod.ts';
 
 UtfStringVisual.length("🇫🇷");  // 1
 UtfString.length("🇫🇷");        // 2
